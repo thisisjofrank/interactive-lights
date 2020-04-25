@@ -1,0 +1,43 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "hello-express",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "devserver": "nodemon --inspect server.js",
+    "debug": "node --inspect server.js",
+    "test": "jest",
+    "mqtt": "node mqtt-send.js",
+    "mqttwatch": "node mqtt-watch.js"
+  },
+  "dependencies": {
+    "ably": "latest",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "form-data": "^3.0.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ],
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "jest-cli": "^25.1.0",
+    "jest-each": "^24.9.0",
+    "mqtt": "^3.0.0",
+    "nodemon": "^1.19.4",
+    "supertest": "^4.0.2"
+  }
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TShirt Moderator</title>
+     <script src="https://cdn.ably.io/lib/ably.min-1.js"></script>
+     <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <button id="clear">
+      Clear
+    </button>
+
+      <section class="colors" style="display: none;">
+        <button data-rgb="#ff0000" id="red" class="color red">red</button>
+        <button data-rgb="#ff5500" id="orange" class="color orange">orange</button>
+        <button data-rgb="#ffff00" id="yellow" class="color yellow">yellow</button>
+        <button data-rgb="#00ff00" id="green" class="color green">green</button>
+        <button data-rgb="#00ffff" id="cyan" class="color cyan">turquoise</button>
+        <button data-rgb="#0000ff" id="blue" class="color blue">blue</button>
+        <button data-rgb="#aa00ff" id="purple" class="color purple">purple</button>
+        <button data-rgb="#ff44aa" id="pink" class="color pink">pink</button>
+        <button data-rgb="#ffffff" id="white" class="color white">white</button>
+        <button data-rgb="#000000" id="black" class="color black">off</button>
+      </section>
+    
+    <h1>Preview</h1>
+    <svg class="array" id="array" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 570">
+      <rect id="square000" class="square" width="30" height="30"/>
+      <rect id="square001" class="square" x="36" width="30" height="30"/>
+      <rect id="square002" class="square" x="72" width="30" height="30"/>
+      <rect id="square003" class="square" x="108" width="30" height="30"/>
+      <rect id="square004" class="square" x="144" width="30" height="30"/>
+      <rect id="square005" class="square" x="180" width="30" height="30"/>
+      <rect id="square006" class="square" x="216" width="30" height="30"/>
+      <rect id="square007" class="square" x="252" width="30" height="30"/>
+      <rect id="square008" class="square" x="288" width="30" height="30"/>
+      <rect id="square009" class="square" x="324" width="30" height="30"/>
+      <rect id="square010" class="square" x="360" width="30" height="30"/>
+      <rect id="square011" class="square" x="396" width="30" height="30"/>
+      <rect id="square012" class="square" x="432" width="30" height="30"/>
+      <rect id="square013" class="square" x="468" width="30" height="30"/>
+      <rect id="square014" class="square" x="504" width="30" height="30"/>
+      <rect id="square015" class="square" x="540" width="30" height="30"/>
+      <rect id="square016" class="square" y="36" width="30" height="30"/>
+      <rect id="square017" class="square" x="36" y="36" width="30" height="30"/>
+      <rect id="square018" class="square" x="72" y="36" width="30" height="30"/>
+      <rect id="square019" class="square" x="108" y="36" width="30" height="30"/>
+      <rect id="square020" class="square" x="144" y="36" width="30" height="30"/>
+      <rect id="square021" class="square" x="180" y="36" width="30" height="30"/>
+      <rect id="square022" class="square" x="216" y="36" width="30" height="30"/>
+      <rect id="square023" class="square" x="252" y="36" width="30" height="30"/>
+      <rect id="square024" class="square" x="288" y="36" width="30" height="30"/>
+      <rect id="square025" class="square" x="324" y="36" width="30" height="30"/>
+      <rect id="square026" class="square" x="360" y="36" width="30" height="30"/>
+      <rect id="square027" class="square" x="396" y="36" width="30" height="30"/>
+      <rect id="square028" class="square" x="432" y="36" width="30" height="30"/>
+      <rect id="square029" class="square" x="468" y="36" width="30" height="30"/>
+      <rect id="square030" class="square" x="504" y="36" width="30" height="30"/>
+      <rect id="square031" class="square" x="540" y="36" width="30" height="30"/>
+      <rect id="square032" class="square" y="72" width="30" height="30"/>
+      <rect id="square033" class="square" x="36" y="72" width="30" height="30"/>
+      <rect id="square034" class="square" x="72" y="72" width="30" height="30"/>
+      <rect id="square035" class="square" x="108" y="72" width="30" height="30"/>
+      <rect id="square036" class="square" x="144" y="72" width="30" height="30"/>
+      <rect id="square037" class="square" x="180" y="72" width="30" height="30"/>
+      <rect id="square038" class="square" x="216" y="72" width="30" height="30"/>
+      <rect id="square039" class="square" x="252" y="72" width="30" height="30"/>
+      <rect id="square040" class="square" x="288" y="72" width="30" height="30"/>
+      <rect id="square041" class="square" x="324" y="72" width="30" height="30"/>
+      <rect id="square042" class="square" x="360" y="72" width="30" height="30"/>
+      <rect id="square043" class="square" x="396" y="72" width="30" height="30"/>
+      <rect id="square044" class="square" x="432" y="72" width="30" height="30"/>
+      <rect id="square045" class="square" x="468" y="72" width="30" height="30"/>
+      <rect id="square046" class="square" x="504" y="72" width="30" height="30"/>
+      <rect id="square047" class="square" x="540" y="72" width="30" height="30"/>
+      <rect id="square048" class="square" y="108" width="30" height="30"/>
+      <rect id="square049" class="square" x="36" y="108" width="30" height="30"/>
+      <rect id="square050" class="square" x="72" y="108" width="30" height="30"/>
+      <rect id="square051" class="square" x="108" y="108" width="30" height="30"/>
+      <rect id="square052" class="square" x="144" y="108" width="30" height="30"/>
+      <rect id="square053" class="square" x="180" y="108" width="30" height="30"/>
+      <rect id="square054" class="square" x="216" y="108" width="30" height="30"/>
+      <rect id="square055" class="square" x="252" y="108" width="30" height="30"/>
+      <rect id="square056" class="square" x="288" y="108" width="30" height="30"/>
+      <rect id="square057" class="square" x="324" y="108" width="30" height="30"/>
+      <rect id="square058" class="square" x="360" y="108" width="30" height="30"/>
+      <rect id="square059" class="square" x="396" y="108" width="30" height="30"/>
+      <rect id="square060" class="square" x="432" y="108" width="30" height="30"/>
+      <rect id="square061" class="square" x="468" y="108" width="30" height="30"/>
+      <rect id="square062" class="square" x="504" y="108" width="30" height="30"/>
+      <rect id="square063" class="square" x="540" y="108" width="30" height="30"/>
+      <rect id="square064" class="square" y="144" width="30" height="30"/>
+      <rect id="square065" class="square" x="36" y="144" width="30" height="30"/>
+      <rect id="square066" class="square" x="72" y="144" width="30" height="30"/>
+      <rect id="square067" class="square" x="108" y="144" width="30" height="30"/>
+      <rect id="square068" class="square" x="144" y="144" width="30" height="30"/>
+      <rect id="square069" class="square" x="180" y="144" width="30" height="30"/>
+      <rect id="square070" class="square" x="216" y="144" width="30" height="30"/>
+      <rect id="square071" class="square" x="252" y="144" width="30" height="30"/>
+      <rect id="square072" class="square" x="288" y="144" width="30" height="30"/>
+      <rect id="square073" class="square" x="324" y="144" width="30" height="30"/>
+      <rect id="square074" class="square" x="360" y="144" width="30" height="30"/>
+      <rect id="square075" class="square" x="396" y="144" width="30" height="30"/>
+      <rect id="square076" class="square" x="432" y="144" width="30" height="30"/>
+      <rect id="square077" class="square" x="468" y="144" width="30" height="30"/>
+      <rect id="square078" class="square" x="504" y="144" width="30" height="30"/>
+      <rect id="square079" class="square" x="540" y="144" width="30" height="30"/>
+      <rect id="square080" class="square" y="180" width="30" height="30"/>
+      <rect id="square081" class="square" x="36" y="180" width="30" height="30"/>
+      <rect id="square082" class="square" x="72" y="180" width="30" height="30"/>
+      <rect id="square083" class="square" x="108" y="180" width="30" height="30"/>
+      <rect id="square084" class="square" x="144" y="180" width="30" height="30"/>
+      <rect id="square085" class="square" x="180" y="180" width="30" height="30"/>
+      <rect id="square086" class="square" x="216" y="180" width="30" height="30"/>
+      <rect id="square087" class="square" x="252" y="180" width="30" height="30"/>
+      <rect id="square088" class="square" x="288" y="180" width="30" height="30"/>
+      <rect id="square089" class="square" x="324" y="180" width="30" height="30"/>
+      <rect id="square090" class="square" x="360" y="180" width="30" height="30"/>
+      <rect id="square091" class="square" x="396" y="180" width="30" height="30"/>
+      <rect id="square092" class="square" x="432" y="180" width="30" height="30"/>
+      <rect id="square093" class="square" x="468" y="180" width="30" height="30"/>
+      <rect id="square094" class="square" x="504" y="180" width="30" height="30"/>
+      <rect id="square095" class="square" x="540" y="180" width="30" height="30"/>
+      <rect id="square096" class="square" y="216" width="30" height="30"/>
+      <rect id="square097" class="square" x="36" y="216" width="30" height="30"/>
+      <rect id="square098" class="square" x="72" y="216" width="30" height="30"/>
+      <rect id="square099" class="square" x="108" y="216" width="30" height="30"/>
+      <rect id="square100" class="square" x="144" y="216" width="30" height="30"/>
+      <rect id="square101" class="square" x="180" y="216" width="30" height="30"/>
+      <rect id="square102" class="square" x="216" y="216" width="30" height="30"/>
+      <rect id="square103" class="square" x="252" y="216" width="30" height="30"/>
+      <rect id="square104" class="square" x="288" y="216" width="30" height="30"/>
+      <rect id="square105" class="square" x="324" y="216" width="30" height="30"/>
+      <rect id="square106" class="square" x="360" y="216" width="30" height="30"/>
+      <rect id="square107" class="square" x="396" y="216" width="30" height="30"/>
+      <rect id="square108" class="square" x="432" y="216" width="30" height="30"/>
+      <rect id="square109" class="square" x="468" y="216" width="30" height="30"/>
+      <rect id="square110" class="square" x="504" y="216" width="30" height="30"/>
+      <rect id="square111" class="square" x="540" y="216" width="30" height="30"/>
+      <rect id="square112" class="square" y="252" width="30" height="30"/>
+      <rect id="square113" class="square" x="36" y="252" width="30" height="30"/>
+      <rect id="square114" class="square" x="72" y="252" width="30" height="30"/>
+      <rect id="square115" class="square" x="108" y="252" width="30" height="30"/>
+      <rect id="square116" class="square" x="144" y="252" width="30" height="30"/>
+      <rect id="square117" class="square" x="180" y="252" width="30" height="30"/>
+      <rect id="square118" class="square" x="216" y="252" width="30" height="30"/>
+      <rect id="square119" class="square" x="252" y="252" width="30" height="30"/>
+      <rect id="square120" class="square" x="288" y="252" width="30" height="30"/>
+      <rect id="square121" class="square" x="324" y="252" width="30" height="30"/>
+      <rect id="square122" class="square" x="360" y="252" width="30" height="30"/>
+      <rect id="square123" class="square" x="396" y="252" width="30" height="30"/>
+      <rect id="square124" class="square" x="432" y="252" width="30" height="30"/>
+      <rect id="square125" class="square" x="468" y="252" width="30" height="30"/>
+      <rect id="square126" class="square" x="504" y="252" width="30" height="30"/>
+      <rect id="square127" class="square" x="540" y="252" width="30" height="30"/>
+      <rect id="square128" class="square" y="288" width="30" height="30"/>
+      <rect id="square129" class="square" x="36" y="288" width="30" height="30"/>
+      <rect id="square130" class="square" x="72" y="288" width="30" height="30"/>
+      <rect id="square131" class="square" x="108" y="288" width="30" height="30"/>
+      <rect id="square132" class="square" x="144" y="288" width="30" height="30"/>
+      <rect id="square133" class="square" x="180" y="288" width="30" height="30"/>
+      <rect id="square134" class="square" x="216" y="288" width="30" height="30"/>
+      <rect id="square135" class="square" x="252" y="288" width="30" height="30"/>
+      <rect id="square136" class="square" x="288" y="288" width="30" height="30"/>
+      <rect id="square137" class="square" x="324" y="288" width="30" height="30"/>
+      <rect id="square138" class="square" x="360" y="288" width="30" height="30"/>
+      <rect id="square139" class="square" x="396" y="288" width="30" height="30"/>
+      <rect id="square140" class="square" x="432" y="288" width="30" height="30"/>
+      <rect id="square141" class="square" x="468" y="288" width="30" height="30"/>
+      <rect id="square142" class="square" x="504" y="288" width="30" height="30"/>
+      <rect id="square143" class="square" x="540" y="288" width="30" height="30"/>
+      <rect id="square144" class="square" y="324" width="30" height="30"/>
+      <rect id="square145" class="square" x="36" y="324" width="30" height="30"/>
+      <rect id="square146" class="square" x="72" y="324" width="30" height="30"/>
+      <rect id="square147" class="square" x="108" y="324" width="30" height="30"/>
+      <rect id="square148" class="square" x="144" y="324" width="30" height="30"/>
+      <rect id="square149" class="square" x="180" y="324" width="30" height="30"/>
+      <rect id="square150" class="square" x="216" y="324" width="30" height="30"/>
+      <rect id="square151" class="square" x="252" y="324" width="30" height="30"/>
+      <rect id="square152" class="square" x="288" y="324" width="30" height="30"/>
+      <rect id="square153" class="square" x="324" y="324" width="30" height="30"/>
+      <rect id="square154" class="square" x="360" y="324" width="30" height="30"/>
+      <rect id="square155" class="square" x="396" y="324" width="30" height="30"/>
+      <rect id="square156" class="square" x="432" y="324" width="30" height="30"/>
+      <rect id="square157" class="square" x="468" y="324" width="30" height="30"/>
+      <rect id="square158" class="square" x="504" y="324" width="30" height="30"/>
+      <rect id="square159" class="square" x="540" y="324" width="30" height="30"/>
+      <rect id="square160" class="square" y="360" width="30" height="30"/>
+      <rect id="square161" class="square" x="36" y="360" width="30" height="30"/>
+      <rect id="square162" class="square" x="72" y="360" width="30" height="30"/>
+      <rect id="square163" class="square" x="108" y="360" width="30" height="30"/>
+      <rect id="square164" class="square" x="144" y="360" width="30" height="30"/>
+      <rect id="square165" class="square" x="180" y="360" width="30" height="30"/>
+      <rect id="square166" class="square" x="216" y="360" width="30" height="30"/>
+      <rect id="square167" class="square" x="252" y="360" width="30" height="30"/>
+      <rect id="square168" class="square" x="288" y="360" width="30" height="30"/>
+      <rect id="square169" class="square" x="324" y="360" width="30" height="30"/>
+      <rect id="square170" class="square" x="360" y="360" width="30" height="30"/>
+      <rect id="square171" class="square" x="396" y="360" width="30" height="30"/>
+      <rect id="square172" class="square" x="432" y="360" width="30" height="30"/>
+      <rect id="square173" class="square" x="468" y="360" width="30" height="30"/>
+      <rect id="square174" class="square" x="504" y="360" width="30" height="30"/>
+      <rect id="square175" class="square" x="540" y="360" width="30" height="30"/>
+      <rect id="square176" class="square" y="396" width="30" height="30"/>
+      <rect id="square177" class="square" x="36" y="396" width="30" height="30"/>
+      <rect id="square178" class="square" x="72" y="396" width="30" height="30"/>
+      <rect id="square179" class="square" x="108" y="396" width="30" height="30"/>
+      <rect id="square180" class="square" x="144" y="396" width="30" height="30"/>
+      <rect id="square181" class="square" x="180" y="396" width="30" height="30"/>
+      <rect id="square182" class="square" x="216" y="396" width="30" height="30"/>
+      <rect id="square183" class="square" x="252" y="396" width="30" height="30"/>
+      <rect id="square184" class="square" x="288" y="396" width="30" height="30"/>
+      <rect id="square185" class="square" x="324" y="396" width="30" height="30"/>
+      <rect id="square186" class="square" x="360" y="396" width="30" height="30"/>
+      <rect id="square187" class="square" x="396" y="396" width="30" height="30"/>
+      <rect id="square188" class="square" x="432" y="396" width="30" height="30"/>
+      <rect id="square189" class="square" x="468" y="396" width="30" height="30"/>
+      <rect id="square190" class="square" x="504" y="396" width="30" height="30"/>
+      <rect id="square191" class="square" x="540" y="396" width="30" height="30"/>
+      <rect id="square192" class="square" y="432" width="30" height="30"/>
+      <rect id="square193" class="square" x="36" y="432" width="30" height="30"/>
+      <rect id="square194" class="square" x="72" y="432" width="30" height="30"/>
+      <rect id="square195" class="square" x="108" y="432" width="30" height="30"/>
+      <rect id="square196" class="square" x="144" y="432" width="30" height="30"/>
+      <rect id="square197" class="square" x="180" y="432" width="30" height="30"/>
+      <rect id="square198" class="square" x="216" y="432" width="30" height="30"/>
+      <rect id="square199" class="square" x="252" y="432" width="30" height="30"/>
+      <rect id="square200" class="square" x="288" y="432" width="30" height="30"/>
+      <rect id="square201" class="square" x="324" y="432" width="30" height="30"/>
+      <rect id="square202" class="square" x="360" y="432" width="30" height="30"/>
+      <rect id="square203" class="square" x="396" y="432" width="30" height="30"/>
+      <rect id="square204" class="square" x="432" y="432" width="30" height="30"/>
+      <rect id="square205" class="square" x="468" y="432" width="30" height="30"/>
+      <rect id="square206" class="square" x="504" y="432" width="30" height="30"/>
+      <rect id="square207" class="square" x="540" y="432" width="30" height="30"/>
+      <rect id="square208" class="square" y="468" width="30" height="30"/>
+      <rect id="square209" class="square" x="36" y="468" width="30" height="30"/>
+      <rect id="square210" class="square" x="72" y="468" width="30" height="30"/>
+      <rect id="square211" class="square" x="108" y="468" width="30" height="30"/>
+      <rect id="square212" class="square" x="144" y="468" width="30" height="30"/>
+      <rect id="square213" class="square" x="180" y="468" width="30" height="30"/>
+      <rect id="square214" class="square" x="216" y="468" width="30" height="30"/>
+      <rect id="square215" class="square" x="252" y="468" width="30" height="30"/>
+      <rect id="square216" class="square" x="288" y="468" width="30" height="30"/>
+      <rect id="square217" class="square" x="324" y="468" width="30" height="30"/>
+      <rect id="square218" class="square" x="360" y="468" width="30" height="30"/>
+      <rect id="square219" class="square" x="396" y="468" width="30" height="30"/>
+      <rect id="square220" class="square" x="432" y="468" width="30" height="30"/>
+      <rect id="square221" class="square" x="468" y="468" width="30" height="30"/>
+      <rect id="square222" class="square" x="504" y="468" width="30" height="30"/>
+      <rect id="square223" class="square" x="540" y="468" width="30" height="30"/>
+      <rect id="square224" class="square" y="504" width="30" height="30"/>
+      <rect id="square225" class="square" x="36" y="504" width="30" height="30"/>
+      <rect id="square226" class="square" x="72" y="504" width="30" height="30"/>
+      <rect id="square227" class="square" x="108" y="504" width="30" height="30"/>
+      <rect id="square228" class="square" x="144" y="504" width="30" height="30"/>
+      <rect id="square229" class="square" x="180" y="504" width="30" height="30"/>
+      <rect id="square230" class="square" x="216" y="504" width="30" height="30"/>
+      <rect id="square231" class="square" x="252" y="504" width="30" height="30"/>
+      <rect id="square232" class="square" x="288" y="504" width="30" height="30"/>
+      <rect id="square233" class="square" x="324" y="504" width="30" height="30"/>
+      <rect id="square234" class="square" x="360" y="504" width="30" height="30"/>
+      <rect id="square235" class="square" x="396" y="504" width="30" height="30"/>
+      <rect id="square236" class="square" x="432" y="504" width="30" height="30"/>
+      <rect id="square237" class="square" x="468" y="504" width="30" height="30"/>
+      <rect id="square238" class="square" x="504" y="504" width="30" height="30"/>
+      <rect id="square239" class="square" x="540" y="504" width="30" height="30"/>
+      <rect id="square240" class="square" y="540" width="30" height="30"/>
+      <rect id="square241" class="square" x="36" y="540" width="30" height="30"/>
+      <rect id="square242" class="square" x="72" y="540" width="30" height="30"/>
+      <rect id="square243" class="square" x="108" y="540" width="30" height="30"/>
+      <rect id="square244" class="square" x="144" y="540" width="30" height="30"/>
+      <rect id="square245" class="square" x="180" y="540" width="30" height="30"/>
+      <rect id="square246" class="square" x="216" y="540" width="30" height="30"/>
+      <rect id="square247" class="square" x="252" y="540" width="30" height="30"/>
+      <rect id="square248" class="square" x="288" y="540" width="30" height="30"/>
+      <rect id="square249" class="square" x="324" y="540" width="30" height="30"/>
+      <rect id="square250" class="square" x="360" y="540" width="30" height="30"/>
+      <rect id="square251" class="square" x="396" y="540" width="30" height="30"/>
+      <rect id="square252" class="square" x="432" y="540" width="30" height="30"/>
+      <rect id="square253" class="square" x="468" y="540" width="30" height="30"/>
+      <rect id="square254" class="square" x="504" y="540" width="30" height="30"/>
+      <rect id="square255" class="square" x="540" y="540" width="30" height="30"/>
+    </svg>
+  </body>
+</html>

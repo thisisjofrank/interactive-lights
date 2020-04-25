@@ -1,0 +1,96 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 6vw;
+  text-align: center;
+}
+
+.square {
+  fill: black;
+  cursor: pointer;
+}
+
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto 10px;
+  max-width: 600px;
+}
+
+.color {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border: 0;
+  border-radius: 50%;
+  background-color: red;
+  font-size: 0;
+}
+
+.orange {
+  background-color: orange;
+  fill: orange;
+}
+
+.yellow {
+  background-color: yellow;
+  fill: yellow;
+}
+
+.green {
+  background-color: limegreen;
+  fill: LimeGreen;
+}
+
+.cyan {
+  background-color: cyan;
+  fill: cyan;
+}
+
+.blue {
+  background-color: blue;
+  fill: blue;
+}
+
+.purple {
+  background-color: darkviolet;
+  fill: darkviolet;
+}
+
+.pink {
+  background-color: pink;
+  fill: pink;
+}
+
+.white {
+  background-color: white;
+  fill: white;
+  border: 2px solid black;
+}
+
+.black {
+  background-color: black;
+  fill: black;
+}
+
+.array {
+  margin-top: 10px;
+}
+
+@media (min-width: 700px) {
+  .color {
+    width: 54px;
+    height: 54px;
+  }
+  
+  h1 {
+    font-size: 2em;  
+  }
+}
