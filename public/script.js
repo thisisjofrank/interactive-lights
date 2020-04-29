@@ -1,7 +1,7 @@
 console.log("Oh hai! 🖤");
 
-const color = document.getElementsByClassName('color');
-const square = document.getElementsByClassName('square');
+const colors = document.getElementsByClassName('color');
+const squares = document.getElementsByClassName('square');
 const colorMap = [...document.querySelectorAll('[data-rgb]')];
 
 let selected = "white";
@@ -13,8 +13,8 @@ function setActiveColor(e) {
   console.log(rgb);
 }
   
-for (let item of color) {
-  item.addEventListener("click", setActiveColor, false);   
+for (let color of colors) {
+  color.addEventListener("click", setActiveColor, false);   
 }
 
 function colorAndPublish(e, channel) {
@@ -48,8 +48,8 @@ function processSyncMessage(message) {
 }
 
 function resetDisplay() {
-  for (let item of square) {
-    item.style.fill = "black";
+  for (let color of square) {
+    color.style.fill = "black";
   }
 }
 
@@ -81,8 +81,8 @@ async function connect() {
   await channel.attach();
   
   const onClick = (e) => colorAndPublish(e, channel);
-  for (let cell of square) {
-    cell.addEventListener("click", onClick, false);   
+  for (let square of squares) {
+    square.addEventListener("click", onClick, false);   
   }
 
   channel.subscribe(processMessage);  
@@ -91,8 +91,8 @@ async function connect() {
   
   const moderation = document.getElementById('clear');
   if (moderation) {
-    for (let cell of square) {
-      cell.removeEventListener("click", onClick, false);   
+    for (let square of squares) {
+      square.removeEventListener("click", onClick, false);   
     }
     moderation.addEventListener("click", e => {      
       channel.publish("tshirt", "X");  
