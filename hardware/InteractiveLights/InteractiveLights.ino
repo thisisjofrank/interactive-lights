@@ -16,7 +16,7 @@ configuration cfg = {
   { "ilikepie", "Goldfish54!" },
   { 
     "mqtt.ably.io", 8883,    
-    "api-key-part1", "api-key-part2", 
+    "3SwaWA.eWNKzg", "iDGSDjPS1oSrYmXR",
     "3b b1 e6 46 12 f9 f4 ac 53 59 f4 97 99 ee 35 c9 3b 3b 46 11", 
     "tshirt" 
   }

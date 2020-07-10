@@ -36,7 +36,6 @@ void mqtt_connection::ensure_mqtt_connected(void(*callback)(String&, String&))
       delay(5000);
     }
   }
-  
 }
 
 void mqtt_connection::process_messages()

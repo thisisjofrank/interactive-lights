@@ -20,11 +20,6 @@ client.on('connect', function () {
       client.publish('tshirt', 'C');
       client.publish('tshirt', '100#FF0000');
       
-      /*
-      for (var i = 0; i <= 256; i++) {
-        client.publish('tshirt', 'C');
-      }*/
-
       await sleep(3000);
       process.exit(0);
     }
